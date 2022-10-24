@@ -18,6 +18,11 @@ function generateListItems() {
 
 generateListItems()
 
+
+// Smoothly Scroll to Top of Page when User scrolls 400 pixels from top.
+let upBtn = document.querySelector(".upBtn");
+
+
 // While scrolling through the page, add and remove the active class dynamically according to what is visible.
 window.onscroll = function () {
     // Iterate over all the sections and check active.
@@ -34,16 +39,10 @@ window.onscroll = function () {
             activeSection.classList.remove("active-link");
         }
     });
-}
-
-
-// Smoothly Scroll to Top of Page when User scrolls 400 pixels from top.
-let upBtn = document.querySelector(".upBtn");
-
-// Control the CSS Class "Show" and remove it according to the position on page.
-window.onscroll = function () {
+    // Control the CSS Class "Show" and remove it according to the position on page.
     if (this.scrollY >= 400) { upBtn.classList.add("show"); }
     else { upBtn.classList.remove("show"); }
+
 };
 
 // Scroll to top, smoothly.
